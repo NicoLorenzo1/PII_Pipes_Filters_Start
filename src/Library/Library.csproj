@@ -6,9 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta0005" />
-  </ItemGroup>
-  <!-- <ItemGroup>
     <ProjectReference Include="..\..\..\PII_TwitterApi\src\Library\Library.csproj" />
-    <ProjectReference Include="..\..\..\PII_COGNITIVE_API_AWS\src\Library\Library.csproj" />
-  </ItemGroup> -->
+    <ProjectReference Include="..\..\..\PII_CognitiveAPI\src\Library\Library.csproj" />
+  </ItemGroup> 
 </Project>

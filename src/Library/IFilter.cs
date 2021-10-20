@@ -16,3 +16,4 @@ namespace CompAndDel
         IPicture Filter(IPicture image);
     }
 }
+

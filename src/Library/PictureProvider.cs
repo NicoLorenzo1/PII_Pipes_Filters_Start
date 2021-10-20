@@ -1,6 +1,7 @@
 using System.Drawing;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
+using System;
 
 namespace CompAndDel
 {
@@ -22,7 +23,7 @@ namespace CompAndDel
                 picture.Resize(image.Width, image.Height);
                 for (int h = 0; h < image.Height; h++)
                 {
-                    for (int w = 0; w <image.Width; w++)
+                    for (int w = 0; w < image.Width; w++)
                     {
                         picture.SetColor(w, h, Color.FromArgb(image[w, h].A, image[w, h].R, image[w, h].G, image[w, h].B));
                     }
@@ -40,7 +41,7 @@ namespace CompAndDel
         {
             int width = picture.Width;
             int height = picture.Height;
-            using(Image<Rgba32> image = new Image<Rgba32>(width, height)) // creates a new image with all the pixels set as transparent
+            using (Image<Rgba32> image = new Image<Rgba32>(width, height)) // creates a new image with all the pixels set as transparent
             {
                 for (int h = 0; h < picture.Height; h++)
                 {
@@ -53,5 +54,28 @@ namespace CompAndDel
                 image.Save(path);
             }
         }
+
+        // public void SavePicture2(IPicture picture, string path)
+        // {
+        //     int width = picture.Width;
+        //     int height = picture.Height;
+        //     using (Image<Rgba32> image = new Image<Rgba32>(width, height)) // creates a new image with all the pixels set as transparent
+        //     {
+        //         for (int h = 0; h < picture.Height; h++)
+        //         {
+        //             for (int w = 0; w < picture.Width; w++)
+        //             {
+        //                 Color c = picture.GetColor(w, h);
+        //                 image[w, h] = new Rgba32(c.R, c.G, c.B, c.A);
+        //             }
+        //         }
+        //         /// <summary>
+        //         /// numero random para no sobrescribir la foto guardada
+        //         /// </summary>
+        //         /// <returns></returns>
+        //         Random rnd = new Random();
+        //         image.Save(rnd.Next(0, 100) + path);
+        //     }
+        // }
     }
 }
